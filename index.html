@@ -289,7 +289,10 @@
     </div>
     <div class="awards-media-col">
       <img src="assets/medal.jpg" alt="Медаль участника рекорда России" class="medal-photo" width="400" height="400" />
-      <div class="placeholder-box">макет грамоты · A4, вертикаль</div>
+      <picture>
+        <source srcset="assets/gramota.webp" type="image/webp" />
+        <img src="assets/gramota.jpg" alt="Грамота участника рекорда России" width="1000" height="980" class="gramota-photo" loading="lazy" />
+      </picture>
     </div>
   </div>
 </section>
@@ -323,13 +326,17 @@
         <div class="msg-grid">
           <a href="https://t.me/siladvizen" target="_blank" rel="noopener" class="msg-card">
             <span class="msg-card-title">Telegram</span>
-            <div class="qr-placeholder">QR</div>
-            <span class="msg-card-link">t.me/siladvizen</span>
+            <picture class="qr-wrap">
+              <source srcset="assets/qr-telegram.webp" type="image/webp" />
+              <img src="assets/qr-telegram.jpeg" alt="QR-код для перехода в Telegram" width="312" height="312" class="qr-photo" loading="lazy" />
+            </picture>
           </a>
-          <a href="#max" target="_blank" rel="noopener" class="msg-card">
+          <a href="https://max.ru/join/hAYeOLYFMvHiLEqjc5nuUDSk0sviHxXJx_H2sDWXIdU" target="_blank" rel="noopener" class="msg-card">
             <span class="msg-card-title">MAX</span>
-            <div class="qr-placeholder">QR</div>
-            <span class="msg-card-link">[ссылка на группу]</span>
+            <picture class="qr-wrap">
+              <source srcset="assets/qr-max.webp" type="image/webp" />
+              <img src="assets/qr-max.jpeg" alt="QR-код для вступления в группу MAX" width="483" height="483" class="qr-photo" loading="lazy" />
+            </picture>
           </a>
         </div>
         <a href="https://t.me/siladvizen" target="_blank" rel="noopener" class="btn btn-primary btn-block">Перейти и зарегистрироваться</a>
@@ -353,7 +360,10 @@
         <span class="muted">основатель проекта «Сила движения» и Академии спорта</span>
       </div>
     </div>
-    <div class="founder-photo-col placeholder-box">фото · Никита Лежанкин,<br />портрет 4:5, webp</div>
+    <picture class="founder-photo-col">
+      <source srcset="assets/founder-nikita.webp" type="image/webp" />
+      <img src="assets/founder-nikita.jpg" alt="Никита Лежанкин, основатель проекта «Сила движения»" width="1280" height="1600" class="founder-photo" loading="lazy" />
+    </picture>
   </div>
 </section>
 
@@ -373,21 +383,21 @@
         </span>
       </div>
       <div class="partner-card">
-        <span class="partner-logo-placeholder">логотип</span>
+        <img src="assets/logo-sila.png" alt="«Сила движения»" width="456" height="456" class="partner-logo" />
         <span class="partner-info">
           <span class="partner-name">«Сила движения»</span>
           <span class="partner-role">социальный партнёр</span>
         </span>
       </div>
       <div class="partner-card">
-        <span class="partner-logo-placeholder">логотип</span>
+        <img src="assets/logo-federation.png" alt="Федерация спортивной гимнастики г. Екатеринбурга" width="1310" height="1200" class="partner-logo" />
         <span class="partner-info">
           <span class="partner-name">Федерация спортивной гимнастики г. Екатеринбурга</span>
           <span class="partner-role">при участии</span>
         </span>
       </div>
       <div class="partner-card">
-        <span class="partner-logo-placeholder">логотип</span>
+        <img src="assets/logo-newpeople.webp" alt="«Новые люди»" width="1280" height="928" class="partner-logo" />
         <span class="partner-info">
           <span class="partner-name">«Новые люди»</span>
           <span class="partner-role">при поддержке · по согласованию</span>
@@ -404,16 +414,16 @@
       <span class="tick tick-footer" aria-hidden="true"><span></span><span></span></span>
       <span class="eyebrow eyebrow-footer">вопросы по участию</span>
       <a href="tel:+78006008897" class="footer-phone">8 (800) 600-88-97</a>
-      <span class="footer-muted">[мессенджер для вопросов]</span>
+      <a href="https://t.me/siladvizen" target="_blank" rel="noopener" class="footer-muted">t.me/siladvizen</a>
     </div>
     <div class="footer-col footer-links">
       <a href="https://t.me/siladvizen" target="_blank" rel="noopener" class="footer-link">Telegram</a>
-      <a href="#max" target="_blank" rel="noopener" class="footer-link">MAX</a>
+      <a href="https://max.ru/join/hAYeOLYFMvHiLEqjc5nuUDSk0sviHxXJx_H2sDWXIdU" target="_blank" rel="noopener" class="footer-link">MAX</a>
       <a id="privacy" href="#privacy" class="footer-link">Политика обработки персональных данных</a>
     </div>
     <div class="footer-col footer-legal">
       <span>© 2026 Академия спорта — организатор рекорда и оператор персональных данных.</span>
-      <span>13 сентября 2026, Екатеринбург, [адрес].</span>
+      <span>13 сентября 2026, Екатеринбург, ТРЦ VEER MALL.</span>
     </div>
   </div>
 </footer>
