@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Рекорд России по массовым приседаниям — 13 сентября, Екатеринбург</title>
+<meta property="og:title" content="Рекорд России по массовым приседаниям — 13 сентября, Екатеринбург" />
+<meta property="og:description" content="Соберёмся вместе и установим новый рекорд. Участие бесплатное, медаль и грамота каждому участнику." />
+<meta property="og:image" content="assets/hero-mascot.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous" />
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600;700;800;900&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+:root{
+  --navy:#16266B; --navy-dk:#0E1B4D; --red:#E1252B; --red-dk:#C41B21;
+  --bg:#F6F7FB; --line:rgba(22,38,107,0.10); --muted:#5B658F; --white:#fff;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--navy);font-family:Manrope,Helvetica,Arial,sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;text-wrap:pretty}
+a{color:var(--navy);text-decoration:none}
+a:hover{color:var(--red)}
+:focus-visible{outline:2px solid var(--red);outline-offset:3px;border-radius:6px}
+h1,h2,h3{margin:0;font-family:Nunito,Helvetica,Arial,sans-serif;letter-spacing:-0.015em}
+p{margin:0}
+@media (max-width:900px){
+  .hero-bg{background-image:none !important}
+  .hero-ovl{display:none !important}
+  .hero-txt{max-width:100% !important}
+  .hero-pad{padding-bottom:22px !important}
+  .hero-band{display:block !important}
+  .nav-links{display:none !important}
+  .nav-burger{display:flex !important}
+  .nav-cta{padding:12px 18px !important;font-size:14px !important}
+  .stat-div{border-left:0 !important;padding-left:0 !important}
+  .brand-sub{display:none !important}
+}
+@media (prefers-reduced-motion:reduce){*{transition:none !important}}
+</style>
+</helmet>
+<div style="max-width:100%;overflow-x:hidden">
+
+<div style="position:fixed;right:16px;bottom:16px;z-index:80;display:flex;align-items:center;gap:10px;padding:8px 10px 8px 16px;border-radius:999px;background:rgba(14,27,77,0.94);backdrop-filter:blur(8px);box-shadow:0 12px 30px rgba(14,27,77,0.35);font-size:12px;color:rgba(255,255,255,0.6);font-weight:600">
+  <span style="letter-spacing:0.08em;text-transform:uppercase">состояние</span>
+  <div style="display:flex;gap:4px">
+    <button type="button" onClick="{{ setOpen }}" style="{{ btnOpen }}">open</button>
+    <button type="button" onClick="{{ setClosed }}" style="{{ btnClosed }}">closed</button>
+    <button type="button" onClick="{{ setAfter }}" style="{{ btnAfter }}">after</button>
+  </div>
+</div>
+
+<header style="position:sticky;top:0;z-index:60;background:rgba(255,255,255,0.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)">
+  <div style="max-width:1240px;margin:0 auto;padding:12px clamp(16px,3vw,32px);display:flex;align-items:center;justify-content:space-between;gap:20px">
+    <a href="#top" style="display:flex;align-items:center;gap:12px">
+      <img src="assets/academy-logo.png" alt="Академия спорта" style="width:42px;height:42px;object-fit:contain" />
+      <span style="display:flex;flex-direction:column;gap:1px">
+        <span style="font-family:Nunito,Helvetica,Arial,sans-serif;font-size:15px;font-weight:900;letter-spacing:0.01em;line-height:1.15;text-transform:uppercase;white-space:nowrap">Академия спорта</span>
+        <span class="brand-sub" style="font-size:10px;font-weight:700;letter-spacing:0.16em;line-height:1.2;text-transform:uppercase;white-space:nowrap;color:var(--muted)">федеральная сеть</span>
+      </span>
+    </a>
+    <nav style="display:flex;align-items:center;gap:clamp(12px,2.4vw,30px);font-size:15px;font-weight:600">
+      <span class="nav-links" style="display:flex;align-items:center;gap:clamp(14px,2.4vw,30px);white-space:nowrap">
+        <a href="#about">О событии</a>
+        <a href="#participants">Участникам</a>
+        <a href="#partners">Партнёры</a>
+      </span>
+      <a class="nav-cta" href="#reg" style="display:inline-flex;align-items:center;min-height:44px;padding:12px 24px;border-radius:12px;background:var(--red);color:var(--white);font-size:15px;font-weight:700;white-space:nowrap;transition:background .18s ease;box-shadow:0 8px 20px rgba(225,37,43,0.26)" style-hover="background:var(--red-dk);color:var(--white)">Регистрация</a>
+      <button class="nav-burger" type="button" aria-label="Меню" style="display:none;flex-direction:column;justify-content:center;gap:5px;width:44px;height:44px;padding:0 10px;border:0;border-radius:12px;background:transparent;cursor:pointer">
+        <span style="display:block;height:2px;border-radius:2px;background:var(--navy)"></span>
+        <span style="display:block;height:2px;border-radius:2px;background:var(--navy)"></span>
+        <span style="display:block;height:2px;border-radius:2px;background:var(--navy)"></span>
+      </button>
+    </nav>
+  </div>
+</header>
+
+<section id="top" style="position:relative;background:var(--white)">
+  <div class="hero-bg" style="position:relative;background-image:url('assets/hero-mascot.png');background-repeat:no-repeat;background-position:right bottom;background-size:cover;background-color:#F2F4F9">
+    <div class="hero-ovl" style="position:absolute;inset:0;background:linear-gradient(100deg,rgba(255,255,255,0.9) 0%,rgba(255,255,255,0.72) 26%,rgba(255,255,255,0.18) 42%,rgba(255,255,255,0) 54%);pointer-events:none"></div>
+    <div class="hero-pad" style="position:relative;max-width:1240px;margin:0 auto;padding:clamp(48px,7vw,96px) clamp(16px,3vw,32px) clamp(120px,13vw,190px)">
+      <div class="hero-txt" style="max-width:min(560px,max(320px,42vw));display:flex;flex-direction:column;gap:clamp(18px,2.2vw,24px)">
+        <div style="display:flex;align-items:center;flex-wrap:wrap;gap:8px 10px;font-size:12px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase">
+          <span style="display:flex;gap:4px;flex:0 0 auto" aria-hidden="true">
+            <span style="width:20px;height:3px;border-radius:2px;background:var(--navy)"></span>
+            <span style="width:9px;height:3px;border-radius:2px;background:var(--red)"></span>
+          </span>
+          <span style="color:var(--red);white-space:nowrap">13 сентября 2026</span>
+          <span style="width:4px;height:4px;border-radius:50%;background:var(--muted);flex:0 0 auto" aria-hidden="true"></span>
+          <span style="color:var(--muted);white-space:nowrap">Екатеринбург</span>
+        </div>
+        <h1 style="font-size:clamp(34px,5.6vw,74px);line-height:1.0;font-weight:900;letter-spacing:-0.03em;color:var(--navy);overflow-wrap:break-word">{{ heroTitle }}</h1>
+        <p style="font-size:clamp(17px,1.9vw,22px);line-height:1.4;font-weight:600;color:var(--navy);max-width:22em">{{ heroLead }}</p>
+        <div style="display:flex;flex-wrap:wrap;gap:12px;margin-top:2px">
+          <a href="{{ heroCtaHref }}" target="{{ ctaTarget }}" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:16px 32px;border-radius:14px;background:var(--red);color:var(--white);font-size:16px;font-weight:700;transition:background .18s ease;box-shadow:0 12px 28px rgba(225,37,43,0.28)" style-hover="background:var(--red-dk);color:var(--white)">{{ heroCtaLabel }}</a>
+          <a href="#about" style="display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:16px 28px;border-radius:14px;background:var(--white);color:var(--navy);border:1px solid var(--line);font-size:16px;font-weight:600;transition:border-color .18s ease" style-hover="border-color:var(--navy);color:var(--navy)">Подробнее</a>
+        </div>
+      </div>
+    </div>
+    <div class="hero-band" style="display:none;height:clamp(230px,52vw,330px);background-image:url('assets/hero-mascot.png');background-repeat:no-repeat;background-position:72% bottom;background-size:auto 118%"></div>
+  </div>
+
+  <div style="position:relative;max-width:1240px;margin:0 auto;padding:0 clamp(16px,3vw,32px);margin-top:clamp(-96px,-9vw,-64px)">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:clamp(14px,2vw,20px);padding:clamp(24px,3vw,32px) clamp(20px,3vw,36px);border-radius:24px;background:var(--white);box-shadow:0 24px 60px rgba(22,38,107,0.12)">
+      <div style="display:flex;flex-direction:column;gap:3px">
+        <span style="font-family:Nunito,Helvetica,Arial,sans-serif;font-size:clamp(26px,2.7vw,36px);line-height:1.1;font-weight:900;color:var(--navy)">{{ targetLabel }}</span>
+        <span style="font-size:14px;font-weight:600;line-height:1.35;color:var(--muted)">участников — цель</span>
+      </div>
+      <div class="stat-div" style="display:flex;flex-direction:column;gap:3px;padding-left:clamp(14px,2vw,20px);border-left:1px solid var(--line)">
+        <span style="font-family:Nunito,Helvetica,Arial,sans-serif;font-size:clamp(26px,2.7vw,36px);line-height:1.1;font-weight:900;color:var(--navy)">1 рекорд</span>
+        <span style="font-size:14px;font-weight:600;line-height:1.35;color:var(--muted)">для страны</span>
+      </div>
+      <div class="stat-div" style="display:flex;flex-direction:column;gap:3px;padding-left:clamp(14px,2vw,20px);border-left:1px solid var(--line)">
+        <span style="font-family:Nunito,Helvetica,Arial,sans-serif;font-size:clamp(26px,2.7vw,36px);line-height:1.1;font-weight:900;color:var(--navy);white-space:nowrap">13 сентября</span>
+        <span style="font-size:14px;font-weight:600;line-height:1.35;color:var(--muted)">начало в 12:00</span>
+      </div>
+      <div class="stat-div" style="display:flex;flex-direction:column;gap:3px;padding-left:clamp(14px,2vw,20px);border-left:1px solid var(--line)">
+        <span style="font-family:Nunito,Helvetica,Arial,sans-serif;font-size:clamp(26px,2.7vw,36px);line-height:1.1;font-weight:900;color:var(--navy)">Медали</span>
+        <span style="font-size:14px;font-weight:600;line-height:1.35;color:var(--muted)">всем участникам</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" style="max-width:1240px;margin:0 auto;padding:clamp(64px,7.5vw,104px) clamp(16px,3vw,32px) clamp(32px,3.8vw,52px)">
+  <div style="display:flex;flex-direction:column;align-items:center;gap:10px">
+    <span style="display:flex;gap:4px" aria-hidden="true">
+      <span style="width:20px;height:3px;border-radius:2px;background:var(--navy)"></span>
+      <span style="width:9px;height:3px;border-radius:2px;background:var(--red)"></span>
+    </span>
+    <span style="font-size:12px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;white-space:nowrap;color:var(--muted)">о событии</span>
+    <h2 style="font-size:clamp(28px,3.4vw,44px);line-height:1.08;font-weight:900;text-align:center">Почему стоит участвовать</h2>
+  </div>
+  <div style="margin-top:clamp(28px,3.5vw,44px);display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px">
+    <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start;padding:clamp(22px,2.6vw,30px);border-radius:20px;background:var(--white);border:1px solid var(--line)">
+      <span style="display:flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:14px;background:rgba(225,37,43,0.08);color:var(--red)">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 21V4"></path><path d="M6 4h11l-2.2 4L17 12H6"></path></svg>
+      </span>
+      <h3 style="font-size:20px;line-height:1.25;font-weight:800">Стать частью большого события</h3>
+      <p style="font-size:15px;line-height:1.55;color:var(--muted)">Официальный рекорд России, который зафиксируют и внесут в реестр.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start;padding:clamp(22px,2.6vw,30px);border-radius:20px;background:var(--white);border:1px solid var(--line)">
+      <span style="display:flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:14px;background:rgba(225,37,43,0.08);color:var(--red)">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20.5C12 20.5 4 16.2 4 10.8A4.3 4.3 0 0 1 12 8.4a4.3 4.3 0 0 1 8 2.4c0 5.4-8 9.7-8 9.7z"></path></svg>
+      </span>
+      <h3 style="font-size:20px;line-height:1.25;font-weight:800">Поддержать спорт и здоровье</h3>
+      <p style="font-size:15px;line-height:1.55;color:var(--muted)">Простое движение, которое доступно каждому — без подготовки и взносов.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start;padding:clamp(22px,2.6vw,30px);border-radius:20px;background:var(--white);border:1px solid var(--line)">
+      <span style="display:flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:14px;background:rgba(225,37,43,0.08);color:var(--red)">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l2.7 5.6 6 .8-4.4 4.3 1.1 6-5.4-2.9-5.4 2.9 1.1-6L3.3 9.4l6-.8z"></path></svg>
+      </span>
+      <h3 style="font-size:20px;line-height:1.25;font-weight:800">Получить памятную медаль</h3>
+      <p style="font-size:15px;line-height:1.55;color:var(--muted)">Медаль и именная грамота достаются каждому участнику попытки.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:12px;align-items:flex-start;padding:clamp(22px,2.6vw,30px);border-radius:20px;background:var(--white);border:1px solid var(--line)">
+      <span style="display:flex;align-items:center;justify-content:center;width:48px;height:48px;border-radius:14px;background:rgba(225,37,43,0.08);color:var(--red)">
+        <svg width="26" height="26" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13.5 2.5L5.5 13.5h5.2l-1 8 8-11.5h-5.4l1.2-7.5z"></path></svg>
+      </span>
+      <h3 style="font-size:20px;line-height:1.25;font-weight:800">Энергия для всей семьи</h3>
+      <p style="font-size:15px;line-height:1.55;color:var(--muted)">Приходите с детьми: показательные выступления, маскот Тигр и фотосессия.</p>
+    </div>
+  </div>
+</section>
+
+<section style="max-width:1240px;margin:0 auto;padding:0 clamp(16px,3vw,32px) clamp(64px,7.5vw,104px)">
+  <div style="position:relative;border-radius:28px;overflow:hidden;background-image:url('assets/join-banner.png');background-size:cover;background-position:right center;background-color:var(--navy);min-height:clamp(300px,30vw,380px);display:flex;align-items:center">
+    <div style="position:absolute;inset:0;background:linear-gradient(95deg,rgba(14,27,77,0.85) 0%,rgba(14,27,77,0.55) 45%,rgba(14,27,77,0) 68%);pointer-events:none"></div>
+    <div style="position:relative;padding:clamp(28px,4vw,52px);display:flex;flex-direction:column;gap:16px;align-items:flex-start;max-width:min(560px,100%)">
+      <h2 style="font-size:clamp(28px,3.6vw,48px);line-height:1.05;font-weight:900;color:var(--white)">{{ joinTitle }}</h2>
+      <p style="font-size:clamp(16px,1.8vw,19px);line-height:1.5;font-weight:500;color:rgba(255,255,255,0.88);max-width:24em">{{ joinText }}</p>
+      <a href="{{ heroCtaHref }}" target="{{ ctaTarget }}" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:16px 32px;border-radius:14px;background:var(--red);color:var(--white);font-size:16px;font-weight:700;transition:background .18s ease;box-shadow:0 12px 28px rgba(0,0,0,0.24)" style-hover="background:var(--red-dk);color:var(--white)">{{ heroCtaLabel }}</a>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div style="max-width:1240px;margin:0 auto;padding:clamp(64px,7.5vw,104px) clamp(16px,3vw,32px)">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center">
+      <span style="display:flex;gap:4px" aria-hidden="true">
+        <span style="width:20px;height:3px;border-radius:2px;background:var(--navy)"></span>
+        <span style="width:9px;height:3px;border-radius:2px;background:var(--red)"></span>
+      </span>
+      <span style="font-size:12px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;white-space:nowrap;color:var(--muted)">правила</span>
+      <h2 style="font-size:clamp(28px,3.4vw,44px);line-height:1.08;font-weight:900">Как это будет</h2>
+      <p style="font-size:clamp(15px,1.5vw,18px);line-height:1.55;color:var(--muted)">Это официальная фиксация рекорда России, а не флешмоб. Всё, что нужно знать заранее.</p>
+    </div>
+    <div style="margin-top:clamp(28px,3.5vw,44px);display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px">
+      <div style="display:flex;flex-direction:column;gap:12px;padding:clamp(22px,2.6vw,30px);border-radius:20px;background:var(--bg)">
+        <span style="display:flex;gap:4px" aria-hidden="true">
+          <span style="width:20px;height:3px;border-radius:2px;background:var(--navy)"></span>
+          <span style="width:9px;height:3px;border-radius:2px;background:var(--red)"></span>
+        </span>
+        <h3 style="font-size:20px;line-height:1.25;font-weight:800">Официальная фиксация</h3>
+        <p style="font-size:15px;line-height:1.55;color:var(--muted)">На площадке работает представитель Книги рекордов России: считает участников и снимает попытку на видео. По итогам рекорд вносят в реестр, а организатор получает свидетельство.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px;padding:clamp(22px,2.6vw,30px);border-radius:20px;background:var(--bg)">
+        <span style="display:flex;gap:4px" aria-hidden="true">
+          <span style="width:20px;height:3px;border-radius:2px;background:var(--navy)"></span>
+          <span style="width:9px;height:3px;border-radius:2px;background:var(--red)"></span>
+        </span>
+        <h3 style="font-size:20px;line-height:1.25;font-weight:800">Одновременно и синхронно</h3>
+        <p style="font-size:15px;line-height:1.55;color:var(--muted)">Все приседают вместе под счёт ведущего. Перед зачётной попыткой проводим репетицию — никто не остаётся без объяснений.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:12px;padding:clamp(22px,2.6vw,30px);border-radius:20px;background:var(--navy);color:var(--white)">
+        <span style="display:flex;gap:4px" aria-hidden="true">
+          <span style="width:20px;height:3px;border-radius:2px;background:rgba(255,255,255,0.55)"></span>
+          <span style="width:9px;height:3px;border-radius:2px;background:var(--red)"></span>
+        </span>
+        <h3 style="font-size:20px;line-height:1.25;font-weight:800">Нужно набрать состав</h3>
+        <p style="font-size:15px;line-height:1.55;color:rgba(255,255,255,0.8)">Рекорд засчитают, только если на площадку выйдет не меньше {{ targetPlain }} человек. Поэтому мы просим зарегистрироваться заранее: так мы понимаем, сколько вас, и готовим нужное количество наград.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="participants" style="max-width:1240px;margin:0 auto;padding:clamp(64px,7.5vw,104px) clamp(16px,3vw,32px)">
+  <div style="display:flex;flex-direction:column;align-items:center;gap:10px">
+    <span style="display:flex;gap:4px" aria-hidden="true">
+      <span style="width:20px;height:3px;border-radius:2px;background:var(--navy)"></span>
+      <span style="width:9px;height:3px;border-radius:2px;background:var(--red)"></span>
+    </span>
+    <span style="font-size:12px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;white-space:nowrap;color:var(--muted)">участникам</span>
+    <h2 style="font-size:min(6.4vw,clamp(28px,3.4vw,44px));line-height:1.08;font-weight:900;text-align:center;white-space:nowrap">Приходите всей семьёй!</h2>
+  </div>
+  <div style="margin-top:clamp(28px,3.5vw,44px);display:flex;flex-wrap:wrap;gap:clamp(20px,3vw,40px);align-items:stretch">
+    <div style="flex:1 1 320px;min-width:0;display:flex;flex-direction:column">
+      <div style="flex:1 1 auto;display:flex;flex-direction:column;justify-content:center;gap:14px;padding:clamp(24px,3vw,34px);border-radius:24px;background:var(--red);color:var(--white);box-shadow:0 18px 44px rgba(225,37,43,0.24)">
+        <span style="font-family:Nunito,Helvetica,Arial,sans-serif;font-size:clamp(48px,7vw,84px);line-height:0.9;font-weight:900;letter-spacing:-0.03em">0 ₽</span>
+        <span style="font-size:clamp(19px,2vw,24px);line-height:1.25;font-weight:800">Участие бесплатное</span>
+        <span style="font-size:15px;line-height:1.55;color:rgba(255,255,255,0.85)">Ни взноса, ни экипировки, ни справок. Нужна только регистрация, чтобы мы посчитали участников и подготовили награды.</span>
+      </div>
+    </div>
+    <div style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;justify-content:center">
+      <div style="display:flex;gap:16px;padding:18px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+        <span style="flex:0 0 8px;width:8px;height:8px;margin-top:9px;border-radius:50%;background:var(--red)"></span>
+        <p style="font-size:16px;line-height:1.55">Дети от [N] лет и взрослые без ограничений по возрасту.</p>
+      </div>
+      <div style="display:flex;gap:16px;padding:18px 0;border-bottom:1px solid var(--line)">
+        <span style="flex:0 0 8px;width:8px;height:8px;margin-top:9px;border-radius:50%;background:var(--red)"></span>
+        <p style="font-size:16px;line-height:1.55">Дети до [N] лет заходят в зону рекорда вместе со взрослым. Если ребёнок приходит с командой клуба — со своим тренером.</p>
+      </div>
+      <div style="display:flex;gap:16px;padding:18px 0;border-bottom:1px solid var(--line)">
+        <span style="flex:0 0 8px;width:8px;height:8px;margin-top:9px;border-radius:50%;background:var(--red)"></span>
+        <p style="font-size:16px;line-height:1.55">Спортивная подготовка не нужна. Приседать будем в комфортном темпе под счёт.</p>
+      </div>
+      <div style="display:flex;gap:16px;padding:18px 0">
+        <span style="flex:0 0 8px;width:8px;height:8px;margin-top:9px;border-radius:50%;background:var(--red)"></span>
+        <p style="font-size:16px;line-height:1.55">Приходите в удобной одежде и обуви, в которой не жарко двигаться.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div style="max-width:1240px;margin:0 auto;padding:clamp(64px,7.5vw,104px) clamp(16px,3vw,32px)">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center">
+      <span style="display:flex;gap:4px" aria-hidden="true">
+        <span style="width:20px;height:3px;border-radius:2px;background:var(--navy)"></span>
+        <span style="width:9px;height:3px;border-radius:2px;background:var(--red)"></span>
+      </span>
+      <span style="font-size:12px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;white-space:nowrap;color:var(--muted)">программа</span>
+      <h2 style="font-size:clamp(28px,3.4vw,44px);line-height:1.08;font-weight:900">Как пройдёт день</h2>
+      <p style="font-size:clamp(15px,1.5vw,18px);line-height:1.55;color:var(--muted)">Гостей запускают на площадку с 11:40. Рекорд фиксируем в 12:30.</p>
+    </div>
+    <div style="margin-top:clamp(28px,3.5vw,44px);display:flex;flex-wrap:wrap;gap:clamp(20px,3vw,40px)">
+      <div style="flex:1 1 420px;min-width:0;display:flex;flex-direction:column;gap:8px">
+        <sc-for list="{{ timeline }}" as="step" hint-placeholder-count="9">
+          <div style="display:flex;align-items:center;gap:clamp(14px,2vw,24px);padding:16px clamp(18px,2vw,24px);border-radius:16px;background:var(--bg)">
+            <span style="flex:0 0 106px;font-family:Nunito,Helvetica,Arial,sans-serif;font-size:16px;font-weight:900;line-height:1.2;color:var(--red);white-space:nowrap">{{ step.time }}</span>
+            <span style="flex:1 1 auto;min-width:0;display:flex;flex-direction:column;gap:2px">
+              <span style="font-size:17px;font-weight:700;line-height:1.3">{{ step.title }}</span>
+              <span style="font-size:14px;line-height:1.5;color:var(--muted)">{{ step.text }}</span>
+            </span>
+          </div>
+        </sc-for>
+      </div>
+      <div style="flex:1 1 300px;min-width:0;display:flex;flex-direction:column;gap:12px">
+        <img src="assets/program-photo.png" alt="Участники массового приседания" style="width:100%;flex:1 1 auto;min-height:260px;height:auto;object-fit:cover;border-radius:20px;display:block" />
+        <div style="padding:20px 22px;border-radius:20px;background:var(--bg);font-size:15px;line-height:1.55;color:var(--muted)">Весь день на площадке работает Тигр — маскот Академии спорта. Можно сфотографироваться и расспросить тренеров о секциях: где, когда и с какого возраста занимаются дети.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="max-width:1240px;margin:0 auto;padding:clamp(64px,7.5vw,104px) clamp(16px,3vw,32px)">
+  <div style="display:flex;flex-direction:column;align-items:center;gap:10px">
+    <span style="display:flex;gap:4px" aria-hidden="true">
+      <span style="width:20px;height:3px;border-radius:2px;background:var(--navy)"></span>
+      <span style="width:9px;height:3px;border-radius:2px;background:var(--red)"></span>
+    </span>
+    <span style="font-size:12px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;white-space:nowrap;color:var(--muted)">награды</span>
+    <h2 style="font-size:min(5.8vw,clamp(28px,3.4vw,44px));line-height:1.08;font-weight:900;text-align:center;white-space:nowrap">Медаль и грамота — каждому</h2>
+  </div>
+  <div style="margin-top:clamp(28px,3.5vw,44px);display:flex;flex-wrap:wrap;gap:clamp(20px,3vw,40px);align-items:center">
+    <div style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;gap:18px">
+      <p style="font-size:clamp(16px,1.7vw,19px);line-height:1.55;color:var(--muted);max-width:32em">{{ awardsText }}</p>
+      <div style="display:flex;flex-wrap:wrap;gap:10px">
+        <span style="padding:9px 16px;border-radius:999px;background:var(--white);border:1px solid var(--line);font-size:14px;font-weight:700;white-space:nowrap">Медаль участника рекорда России</span>
+        <span style="padding:9px 16px;border-radius:999px;background:var(--white);border:1px solid var(--line);font-size:14px;font-weight:700;white-space:nowrap">Именная грамота с датой</span>
+      </div>
+    </div>
+    <div style="flex:1 1 320px;min-width:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:16px">
+      <img src="assets/medal.jpg" alt="Медаль участника рекорда России" style="width:100%;height:100%;min-height:200px;object-fit:contain;background:#0E1B4D;border-radius:20px;display:block" />
+      <div style="border-radius:20px;border:1px dashed rgba(22,38,107,0.22);background:var(--white);min-height:200px;display:flex;align-items:flex-end;padding:18px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;line-height:1.5;color:var(--muted)">макет грамоты · A4, вертикаль</div>
+    </div>
+  </div>
+</section>
+
+<sc-if value="{{ isAfter }}" hint-placeholder-val="{{ false }}">
+<section style="background:var(--white);border-top:1px solid var(--line)">
+  <div style="max-width:1240px;margin:0 auto;padding:clamp(64px,7.5vw,104px) clamp(16px,3vw,32px)">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center">
+      <span style="display:flex;gap:4px" aria-hidden="true">
+        <span style="width:20px;height:3px;border-radius:2px;background:var(--navy)"></span>
+        <span style="width:9px;height:3px;border-radius:2px;background:var(--red)"></span>
+      </span>
+      <span style="font-size:12px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;white-space:nowrap;color:var(--muted)">итоги</span>
+      <h2 style="font-size:clamp(28px,3.4vw,44px);line-height:1.08;font-weight:900">Как это было</h2>
+      <p style="font-size:clamp(15px,1.5vw,18px);line-height:1.55;color:var(--muted)">[N] человек, одна попытка и подтверждение Книги рекордов России.</p>
+    </div>
+    <div style="margin-top:clamp(28px,3.5vw,44px);display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:16px">
+      <div style="grid-column:span 2;min-height:300px;border-radius:20px;border:1px dashed rgba(22,38,107,0.22);background:var(--bg);display:flex;align-items:flex-end;padding:20px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:var(--muted)">фото · общий план площадки</div>
+      <div style="min-height:300px;border-radius:20px;border:1px dashed rgba(22,38,107,0.22);background:var(--bg);display:flex;align-items:flex-end;padding:20px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:var(--muted)">фото · награждение</div>
+      <div style="min-height:200px;border-radius:20px;border:1px dashed rgba(22,38,107,0.22);background:var(--bg);display:flex;align-items:flex-end;padding:20px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:var(--muted)">фото · участники</div>
+      <div style="min-height:200px;border-radius:20px;border:1px dashed rgba(22,38,107,0.22);background:var(--bg);display:flex;align-items:flex-end;padding:20px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:var(--muted)">фото · Тигр и дети</div>
+      <div style="min-height:200px;border-radius:20px;border:1px dashed rgba(22,38,107,0.22);background:var(--bg);display:flex;align-items:flex-end;padding:20px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;color:var(--muted)">фото · свидетельство</div>
+    </div>
+  </div>
+</section>
+</sc-if>
+
+<sc-if value="{{ notAfter }}" hint-placeholder-val="{{ true }}">
+<section id="reg" style="background:var(--white);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div style="max-width:1240px;margin:0 auto;padding:clamp(64px,7.5vw,104px) clamp(16px,3vw,32px)">
+    <sc-if value="{{ isOpen }}" hint-placeholder-val="{{ true }}">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:10px;text-align:center">
+      <span style="display:flex;gap:4px" aria-hidden="true">
+        <span style="width:20px;height:3px;border-radius:2px;background:var(--navy)"></span>
+        <span style="width:9px;height:3px;border-radius:2px;background:var(--red)"></span>
+      </span>
+      <span style="font-size:12px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;white-space:nowrap;color:var(--muted)">регистрация</span>
+      <h2 style="font-size:clamp(28px,3.4vw,44px);line-height:1.08;font-weight:900">Зарегистрируйтесь сейчас</h2>
+      <p style="font-size:clamp(16px,1.7vw,19px);line-height:1.55;color:var(--muted);max-width:34em">Заполнить форму — минута. Мы напишем за день до рекорда: во сколько приходить, куда идти и что взять с собой.</p>
+    </div>
+    <div style="margin-top:clamp(28px,3.5vw,44px);display:flex;flex-wrap:wrap;gap:clamp(20px,3vw,40px);align-items:stretch">
+      <div style="flex:1 1 340px;min-width:0;display:flex;flex-direction:column;justify-content:center;gap:16px">
+        <div style="display:flex;gap:14px;align-items:flex-start">
+          <span style="flex:0 0 30px;width:30px;height:30px;border-radius:50%;background:var(--navy);color:var(--white);font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center">1</span>
+          <p style="font-size:16px;line-height:1.55;padding-top:3px">Подпишитесь на канал в Telegram или группу в MAX.</p>
+        </div>
+        <div style="display:flex;gap:14px;align-items:flex-start">
+          <span style="flex:0 0 30px;width:30px;height:30px;border-radius:50%;background:var(--navy);color:var(--white);font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center">2</span>
+          <p style="font-size:16px;line-height:1.55;padding-top:3px">Откройте закреплённое сообщение — там ссылка на форму.</p>
+        </div>
+        <div style="display:flex;gap:14px;align-items:flex-start">
+          <span style="flex:0 0 30px;width:30px;height:30px;border-radius:50%;background:var(--navy);color:var(--white);font-size:13px;font-weight:800;display:flex;align-items:center;justify-content:center">3</span>
+          <p style="font-size:16px;line-height:1.55;padding-top:3px">Укажите имя, телефон, возраст и согласие на обработку данных.</p>
+        </div>
+        <p style="font-size:14px;line-height:1.55;color:var(--muted);max-width:34em">Мест на площадке ограниченное количество: когда наберём состав, регистрацию закроем. Данные обрабатывает Академия спорта — <a href="#privacy" style="text-decoration:underline;text-underline-offset:2px">политика обработки данных</a>.</p>
+      </div>
+      <div style="flex:1 1 320px;min-width:0;display:flex;flex-direction:column;gap:14px;padding:clamp(22px,3vw,30px);border-radius:24px;background:var(--bg)">
+        <span style="font-size:12px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;white-space:nowrap;color:var(--muted)">выберите, где удобнее</span>
+        <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px">
+          <a href="{{ tgUrl }}" target="_blank" rel="noopener" style="display:flex;flex-direction:column;gap:12px;padding:18px;border-radius:20px;background:var(--white);border:1px solid var(--line);transition:border-color .18s ease" style-hover="border-color:var(--red);color:var(--navy)">
+            <span style="font-size:18px;font-weight:800">Telegram</span>
+            <div style="aspect-ratio:1;border-radius:14px;border:1px dashed rgba(22,38,107,0.24);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;color:var(--muted)">QR</div>
+            <span style="font-size:13px;line-height:1.4;color:var(--muted);overflow-wrap:anywhere">t.me/siladvizen</span>
+          </a>
+          <a href="{{ maxUrl }}" target="_blank" rel="noopener" style="display:flex;flex-direction:column;gap:12px;padding:18px;border-radius:20px;background:var(--white);border:1px solid var(--line);transition:border-color .18s ease" style-hover="border-color:var(--red);color:var(--navy)">
+            <span style="font-size:18px;font-weight:800">MAX</span>
+            <div style="aspect-ratio:1;border-radius:14px;border:1px dashed rgba(22,38,107,0.24);display:flex;align-items:center;justify-content:center;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;color:var(--muted)">QR</div>
+            <span style="font-size:13px;line-height:1.4;color:var(--muted)">[ссылка на группу]</span>
+          </a>
+        </div>
+        <a href="{{ tgUrl }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:16px 28px;border-radius:14px;background:var(--red);color:var(--white);font-size:16px;font-weight:700;text-align:center;transition:background .18s ease;box-shadow:0 12px 28px rgba(225,37,43,0.24)" style-hover="background:var(--red-dk);color:var(--white)">Перейти и зарегистрироваться</a>
+        <p style="font-size:13px;line-height:1.5;color:var(--muted)">Ссылка на форму — в закреплённом сообщении канала.</p>
+      </div>
+    </div>
+    </sc-if>
+    <sc-if value="{{ isClosed }}" hint-placeholder-val="{{ false }}">
+    <div style="display:flex;flex-direction:column;gap:16px;align-items:flex-start;padding:clamp(28px,4vw,48px);border-radius:24px;background:var(--bg)">
+      <span style="padding:8px 16px;border-radius:10px;background:var(--navy);color:var(--white);font-size:12px;font-weight:800;letter-spacing:0.1em;text-transform:uppercase">набор завершён</span>
+      <h2 style="font-size:clamp(26px,3.2vw,42px);line-height:1.08;font-weight:900">Регистрация закрыта</h2>
+      <p style="font-size:clamp(16px,1.7vw,19px);line-height:1.55;color:var(--muted);max-width:34em">Мы набрали полный состав — спасибо, что откликнулись. Прийти и посмотреть можно свободно: рекорд начнётся в [время] по адресу [адрес]. Чтобы не пропустить следующие события, подпишитесь на канал.</p>
+      <a href="{{ tgUrl }}" target="_blank" rel="noopener" style="display:inline-flex;align-items:center;min-height:54px;padding:16px 30px;border-radius:14px;background:var(--red);color:var(--white);font-size:16px;font-weight:700;transition:background .18s ease" style-hover="background:var(--red-dk);color:var(--white)">Подписаться на канал</a>
+    </div>
+    </sc-if>
+  </div>
+</section>
+</sc-if>
+
+<section style="max-width:1240px;margin:0 auto;padding:clamp(64px,7.5vw,104px) clamp(16px,3vw,32px)">
+  <div style="display:flex;flex-wrap:wrap;gap:clamp(20px,3vw,40px);align-items:stretch">
+    <div style="flex:1 1 380px;min-width:0;display:flex;flex-direction:column;gap:18px">
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <span style="display:flex;gap:4px" aria-hidden="true">
+          <span style="width:20px;height:3px;border-radius:2px;background:var(--navy)"></span>
+          <span style="width:9px;height:3px;border-radius:2px;background:var(--red)"></span>
+        </span>
+        <span style="font-size:12px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;white-space:nowrap;color:var(--muted)">проект «Сила движения»</span>
+        <h2 style="font-size:clamp(26px,3.2vw,42px);line-height:1.08;font-weight:900">Почему мы это делаем</h2>
+      </div>
+      <p style="font-size:clamp(17px,1.9vw,21px);line-height:1.5;font-weight:500;max-width:32em">«Я много лет вижу одну и ту же историю: ребёнок начинает заниматься, у него получается, а через год родители уходят, потому что не тянут оплату. В своей школе мы давно держим несколько бесплатных мест. «Сила движения» — попытка сделать так, чтобы это было не исключением одной школы, а нормальной практикой города. Мы уже выделили проекту [N] мест и зовём другие клубы».</p>
+      <div style="display:flex;flex-direction:column;gap:2px;padding-top:4px;border-top:1px solid var(--line)">
+        <span style="font-size:17px;font-weight:800;padding-top:12px">Никита Лежанкин</span>
+        <span style="font-size:15px;line-height:1.5;color:var(--muted)">основатель проекта «Сила движения» и Академии спорта</span>
+      </div>
+    </div>
+    <div style="flex:1 1 300px;min-width:0;border-radius:24px;border:1px dashed rgba(22,38,107,0.22);background:var(--white);min-height:clamp(300px,34vw,460px);display:flex;align-items:flex-end;padding:20px;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;line-height:1.5;color:var(--muted)">фото · Никита Лежанкин,<br />портрет 4:5, webp</div>
+  </div>
+</section>
+
+<section id="partners" style="background:var(--white);border-top:1px solid var(--line)">
+  <div style="max-width:1240px;margin:0 auto;padding:clamp(56px,6.5vw,88px) clamp(16px,3vw,32px);display:flex;flex-direction:column;gap:clamp(26px,3.2vw,40px)">
+    <div style="display:flex;flex-direction:column;align-items:center;gap:10px">
+      <span style="display:flex;gap:4px" aria-hidden="true">
+        <span style="width:20px;height:3px;border-radius:2px;background:var(--navy)"></span>
+        <span style="width:9px;height:3px;border-radius:2px;background:var(--red)"></span>
+      </span>
+      <span style="font-size:12px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;white-space:nowrap;color:var(--muted)">партнёры</span>
+      <h2 style="font-size:clamp(26px,3.2vw,42px);line-height:1.08;font-weight:900;text-align:center">Организаторы и партнёры</h2>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px">
+      <div style="display:grid;grid-template-rows:56px auto;gap:16px;padding:22px;border-radius:20px;background:var(--bg)">
+        <img src="assets/academy-logo.png" alt="Академия спорта" style="width:56px;height:56px;object-fit:contain;align-self:center;justify-self:start" />
+        <span style="display:flex;flex-direction:column;gap:4px">
+          <span style="font-size:16px;font-weight:800;line-height:1.3">Академия спорта</span>
+          <span style="font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted)">организатор</span>
+        </span>
+      </div>
+      <div style="display:grid;grid-template-rows:56px auto;gap:16px;padding:22px;border-radius:20px;background:var(--bg)">
+        <span style="align-self:center;justify-self:start;display:flex;align-items:center;padding:0 12px;height:44px;border-radius:10px;border:1px dashed rgba(22,38,107,0.24);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;color:var(--muted)">логотип</span>
+        <span style="display:flex;flex-direction:column;gap:4px">
+          <span style="font-size:16px;font-weight:800;line-height:1.3">«Сила движения»</span>
+          <span style="font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted)">социальный партнёр</span>
+        </span>
+      </div>
+      <div style="display:grid;grid-template-rows:56px auto;gap:16px;padding:22px;border-radius:20px;background:var(--bg)">
+        <span style="align-self:center;justify-self:start;display:flex;align-items:center;padding:0 12px;height:44px;border-radius:10px;border:1px dashed rgba(22,38,107,0.24);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;color:var(--muted)">логотип</span>
+        <span style="display:flex;flex-direction:column;gap:4px">
+          <span style="font-size:16px;font-weight:800;line-height:1.3">Федерация спортивной гимнастики г. Екатеринбурга</span>
+          <span style="font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted)">при участии</span>
+        </span>
+      </div>
+      <sc-if value="{{ showParty }}" hint-placeholder-val="{{ true }}">
+      <div style="display:grid;grid-template-rows:56px auto;gap:16px;padding:22px;border-radius:20px;background:var(--bg)">
+        <span style="align-self:center;justify-self:start;display:flex;align-items:center;padding:0 12px;height:44px;border-radius:10px;border:1px dashed rgba(22,38,107,0.24);font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11px;color:var(--muted)">логотип</span>
+        <span style="display:flex;flex-direction:column;gap:4px">
+          <span style="font-size:16px;font-weight:800;line-height:1.3">«Новые люди»</span>
+          <span style="font-size:12px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted)">при поддержке · по согласованию</span>
+        </span>
+      </div>
+      </sc-if>
+    </div>
+    <p style="font-size:15px;line-height:1.6;color:var(--muted);text-align:center;max-width:44em;margin:0 auto">Мероприятие проводится при поддержке федеральной сети «Академия спорта» и социального проекта «Сила движения». Рекорд фиксирует Книга рекордов России.</p>
+  </div>
+</section>
+
+<footer style="background:var(--navy-dk);color:var(--white)">
+  <div style="max-width:1240px;margin:0 auto;padding:clamp(44px,5vw,64px) clamp(16px,3vw,32px);display:flex;flex-wrap:wrap;gap:32px;justify-content:space-between">
+    <div style="display:flex;flex-direction:column;gap:8px">
+      <span style="display:flex;gap:4px;margin-bottom:4px" aria-hidden="true">
+        <span style="width:20px;height:3px;border-radius:2px;background:rgba(255,255,255,0.6)"></span>
+        <span style="width:9px;height:3px;border-radius:2px;background:var(--red)"></span>
+      </span>
+      <span style="font-size:12px;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;white-space:nowrap;color:rgba(255,255,255,0.5)">вопросы по участию</span>
+      <a href="tel:+78006008897" style="font-family:Nunito,Helvetica,Arial,sans-serif;font-size:22px;font-weight:900;line-height:1.2;color:var(--white);white-space:nowrap;transition:color .18s ease" style-hover="color:#FF8A8E">8 (800) 600-88-97</a>
+      <span style="font-size:14px;color:rgba(255,255,255,0.6)">[мессенджер для вопросов]</span>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:10px;font-size:14px">
+      <a href="{{ tgUrl }}" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.85)" style-hover="color:#FF8A8E">Telegram</a>
+      <a href="{{ maxUrl }}" target="_blank" rel="noopener" style="color:rgba(255,255,255,0.85)" style-hover="color:#FF8A8E">MAX</a>
+      <a id="privacy" href="#privacy" style="color:rgba(255,255,255,0.85)" style-hover="color:#FF8A8E">Политика обработки персональных данных</a>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px;font-size:13px;line-height:1.5;color:rgba(255,255,255,0.5);max-width:24em">
+      <span>© 2026 Академия спорта — организатор рекорда и оператор персональных данных.</span>
+      <span>13 сентября 2026, Екатеринбург, [адрес].</span>
+    </div>
+  </div>
+</footer>
+
+<template id="__bundler_thumbnail"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120"><rect width="120" height="120" fill="#16266B"/><circle cx="60" cy="60" r="28" fill="#E1252B"/><text x="60" y="70" text-anchor="middle" font-family="Helvetica,Arial,sans-serif" font-size="24" font-weight="700" fill="#fff">РР</text></svg></template>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;pageState&quot;:{&quot;editor&quot;:&quot;enum&quot;,&quot;options&quot;:[&quot;open&quot;,&quot;closed&quot;,&quot;after&quot;],&quot;default&quot;:&quot;open&quot;,&quot;tsType&quot;:&quot;'open' | 'closed' | 'after'&quot;,&quot;section&quot;:&quot;Состояние&quot;},&quot;showParty&quot;:{&quot;editor&quot;:&quot;boolean&quot;,&quot;default&quot;:true,&quot;tsType&quot;:&quot;boolean&quot;,&quot;section&quot;:&quot;Партнёры&quot;},&quot;participantsTarget&quot;:{&quot;editor&quot;:&quot;int&quot;,&quot;default&quot;:500,&quot;min&quot;:50,&quot;max&quot;:2000,&quot;step&quot;:10,&quot;tsType&quot;:&quot;number&quot;,&quot;section&quot;:&quot;Данные&quot;},&quot;telegramUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;https://t.me/siladvizen&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Данные&quot;},&quot;maxUrl&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;#max&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Данные&quot;}}">
+class Component extends DCLogic {
+  state = { pageState: null };
+
+  get st() { return this.state.pageState || this.props.pageState || 'open'; }
+
+  chip(active) {
+    return 'padding:6px 12px;border-radius:999px;border:0;cursor:pointer;font:inherit;font-size:12px;font-weight:700;'
+      + (active ? 'background:#E1252B;color:#fff;' : 'background:rgba(255,255,255,0.1);color:rgba(255,255,255,0.7);');
+  }
+
+  renderVals() {
+    const st = this.st;
+    const target = this.props.participantsTarget ?? 500;
+    const set = (v) => () => this.setState({ pageState: v });
+    const tg = this.props.telegramUrl ?? 'https://t.me/siladvizen';
+
+    const hero = {
+      open: {
+        heroTitle: 'Рекорд России по массовым приседаниям',
+        heroLead: 'Соберёмся вместе и установим новый рекорд!',
+        heroCtaLabel: 'Зарегистрироваться',
+        joinTitle: 'Присоединяйтесь!',
+        joinText: 'Оставьте заявку, чтобы получить всю информацию и инструкции перед рекордом.'
+      },
+      closed: {
+        heroTitle: 'Рекорд России по массовым приседаниям',
+        heroLead: 'Состав участников набран. Приходите поддержать!',
+        heroCtaLabel: 'Подписаться на канал',
+        joinTitle: 'Приходите поддержать!',
+        joinText: 'Регистрация закрыта, но смотреть можно свободно. Детали публикуем в канале.'
+      },
+      after: {
+        heroTitle: 'Рекорд России установлен',
+        heroLead: '[N] человек присели одновременно 13 сентября в Екатеринбурге.',
+        heroCtaLabel: 'Смотреть фотографии',
+        joinTitle: 'Спасибо, что были с нами!',
+        joinText: 'Что дальше — рассказываем в канале проекта «Сила движения».'
+      }
+    }[st];
+
+    return {
+      ...hero,
+      isOpen: st === 'open',
+      isClosed: st === 'closed',
+      isAfter: st === 'after',
+      notAfter: st !== 'after',
+      targetLabel: target + '+',
+      targetPlain: String(target),
+      showParty: this.props.showParty ?? true,
+      tgUrl: tg,
+      maxUrl: this.props.maxUrl ?? '#max',
+      heroCtaHref: st === 'after' ? '#top' : (st === 'open' ? '#reg' : tg),
+      ctaTarget: st === 'closed' ? '_blank' : '_self',
+      awardsText: st === 'after'
+        ? 'Здесь никто не соревновался, поэтому награды получили все, кто вышел на площадку: медаль участника рекорда России и именная грамота с датой.'
+        : 'Здесь никто не соревнуется, поэтому награды получают все, кто вышел на площадку. Медаль участника рекорда России и именная грамота с датой — то, что можно повесить дома на видном месте и показывать через десять лет.',
+      timeline: [
+        { time: '10:15–11:40', title: 'Репетиции и опробование сцены', text: 'Техническая подготовка до открытия площадки.' },
+        { time: '11:40–12:00', title: 'Запуск гостей на площадку', text: '' },
+        { time: '12:00–12:10', title: 'Открытие фестиваля', text: 'Приветствие и вступительные речи гостей.' },
+        { time: '12:10–12:30', title: 'Репетиция рекорда', text: 'Очистка площадки и запуск участников рекорда с пересчётом.' },
+        { time: '12:30–12:35', title: 'Фиксация рекорда', text: '' },
+        { time: '12:35–12:45', title: 'Вручение сертификата', text: 'Торжественное вручение сертификата об установлении рекорда.' },
+        { time: '12:45–13:00', title: 'Выдача наград', text: 'Наградная атрибутика и подарки участникам рекорда.' },
+        { time: '13:00–15:50', title: 'Показательные выступления', text: 'Презентация проекта и Академии спорта.' },
+        { time: '15:50–16:00', title: 'Завершение фестиваля', text: '' }
+      ],
+      setOpen: set('open'), setClosed: set('closed'), setAfter: set('after'),
+      btnOpen: this.chip(st === 'open'), btnClosed: this.chip(st === 'closed'), btnAfter: this.chip(st === 'after')
+    };
+  }
+}
+</script>
+</body>
+</html>
